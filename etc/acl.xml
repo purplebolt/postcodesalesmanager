@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Vaimo_UserAccountPostcodeManagement::post_codes" sortOrder="10" title="post_codes">
+					<resource id="Vaimo_UserAccountPostcodeManagement::post_codes_save" sortOrder="10" title="Save post_codes"/>
+					<resource id="Vaimo_UserAccountPostcodeManagement::post_codes_delete" sortOrder="20" title="Delete post_codes"/>
+					<resource id="Vaimo_UserAccountPostcodeManagement::post_codes_update" sortOrder="30" title="Update post_codes"/>
+					<resource id="Vaimo_UserAccountPostcodeManagement::post_codes_view" sortOrder="40" title="View post_codes"/>
+				</resource>
+				<resource id="Vaimo_UserAccountPostcodeManagement::account_managers" sortOrder="10" title="account_managers">
+					<resource id="Vaimo_UserAccountPostcodeManagement::account_managers_save" sortOrder="10" title="Save account_managers"/>
+					<resource id="Vaimo_UserAccountPostcodeManagement::account_managers_delete" sortOrder="20" title="Delete account_managers"/>
+					<resource id="Vaimo_UserAccountPostcodeManagement::account_managers_update" sortOrder="30" title="Update account_managers"/>
+					<resource id="Vaimo_UserAccountPostcodeManagement::account_managers_view" sortOrder="40" title="View account_managers"/>
+				</resource>
+				<resource id="Vaimo_UserAccountPostcodeManagement::account_manager_post_codes" sortOrder="10" title="account_manager_post_codes">
+					<resource id="Vaimo_UserAccountPostcodeManagement::account_manager_post_codes_save" sortOrder="10" title="Save account_manager_post_codes"/>
+					<resource id="Vaimo_UserAccountPostcodeManagement::account_manager_post_codes_delete" sortOrder="20" title="Delete account_manager_post_codes"/>
+					<resource id="Vaimo_UserAccountPostcodeManagement::account_manager_post_codes_update" sortOrder="30" title="Update account_manager_post_codes"/>
+					<resource id="Vaimo_UserAccountPostcodeManagement::account_manager_post_codes_view" sortOrder="40" title="View account_manager_post_codes"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\PostCodesRepositoryInterface" type="Vaimo\UserAccountPostcodeManagement\Model\PostCodesRepository"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\Data\PostCodesInterface" type="Vaimo\UserAccountPostcodeManagement\Model\PostCodes"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\Data\PostCodesSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\AccountManagersRepositoryInterface" type="Vaimo\UserAccountPostcodeManagement\Model\AccountManagersRepository"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\Data\AccountManagersInterface" type="Vaimo\UserAccountPostcodeManagement\Model\AccountManagers"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\Data\AccountManagersSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\AccountManagerPostCodesRepositoryInterface" type="Vaimo\UserAccountPostcodeManagement\Model\AccountManagerPostCodesRepository"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\Data\AccountManagerPostCodesInterface" type="Vaimo\UserAccountPostcodeManagement\Model\AccountManagerPostCodes"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\Data\AccountManagerPostCodesSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\AssignedCustomerManagerRepositoryInterface" type="Vaimo\UserAccountPostcodeManagement\Model\AssignedCustomerManagerRepository"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\Data\AssignedCustomerManagerInterface" type="Vaimo\UserAccountPostcodeManagement\Model\AssignedCustomerManager"/>
+	<preference for="Vaimo\UserAccountPostcodeManagement\Api\Data\AssignedCustomerManagerSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+
+    <type name="Vaimo\UserAccountPostcodeManagement\Model\ResourceModel\AccountManagerPostCodes\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">account_manager_post_codes</argument>
+            <argument name="eventPrefix" xsi:type="string">account_manager_post_codes</argument>
+            <argument name="eventObject" xsi:type="string">account_manager_post_codes</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Vaimo\UserAccountPostcodeManagement\Model\ResourceModel\AccountManagerPostCodes
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <!--data provider name which used in grid ui component file -->
+                <item name="account_managers_listing_data_source" xsi:type="string">
+                    Vaimo\UserAccountPostcodeManagement\Model\ResourceModel\AccountManagerPostCodes\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">account_managers_listing.account_managers_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>account_managers_columns</spinner>
+		<deps>
+			<dep>account_managers_listing.account_managers_listing_data_source</dep>
+		</deps>
+	</settings>
+    <!--
+	<dataSource component="Magento_Ui/js/grid/provider" name="account_managers_listing_data_source">
+		<settings>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>Vaimo_UserAccountPostcodeManagement::account_managers</aclResource>
+		<dataProvider class="Vaimo\UserAccountPostcodeManagement\Ui\Component\DataProvider\ManagersDataProvider"
+					  name="account_managers_listing_data_source">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	-->
+    <dataSource name="account_managers_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">account_managers_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<columns name="account_managers_columns">
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="id">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="code">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Post Code</label>
+			</settings>
+		</column>
+		<column name="manager_name">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Manager Name</label>
+			</settings>
+		</column>
+	</columns>
+</listing>

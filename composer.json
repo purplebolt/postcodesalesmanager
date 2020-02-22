@@ -1,0 +1,16 @@
+{
+  "name": "vaimo/magento2-module-useraccountpostcodemanagement",
+  "description": "Vaimo Magento2 module UserAccountPostcodeManagement",
+  "require": {
+    "php": "~7.0.0"
+  },
+  "type": "magento2-module",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Vaimo\\UserAccountPostcodeManagement\\": ""
+    }
+  }
+}
